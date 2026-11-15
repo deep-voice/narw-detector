@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "narw-detector"
+version = "0.1.0"
+description = "North Atlantic right whale upcall detector"
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.10"
+authors = [
+  {name = "Naama Marom-Yochai"},
+  {name = "Michael Faran"},
+  {name = "Michael Michelachvili"},
+  {name = "Doron Shachar"},
+]
+keywords = ["bioacoustics", "passive acoustic monitoring", "right whale", "sound event detection"]
+dependencies = [
+  "torch>=2.2",
+  "numpy>=1.26",
+  "scipy>=1.12",
+  "soundfile>=0.12",
+  "pandas>=2",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+# 1.7.5.1.post1 ships no wheels (it builds from source and needs the netCDF C headers)
+mine = ["netCDF4>=1.6,<1.7.5"]
+dev = ["pytest>=8", "ruff>=0.4", "netCDF4>=1.6,<1.7.5"]
+# the demo notebook
+demo = ["jupyterlab>=4", "matplotlib>=3.7", "seaborn>=0.12", "ipywidgets>=8"]
+
+[project.urls]
+Repository = "https://github.com/deep-voice/narw-detector"
+Issues = "https://github.com/deep-voice/narw-detector/issues"
+
+[project.scripts]
+narw-detect = "narw_detector.detect:main"
+narw-train = "narw_detector.train:main"
+narw-threshold = "narw_detector.threshold:main"
+narw-mine = "narw_detector.mining.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/narw_detector"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]

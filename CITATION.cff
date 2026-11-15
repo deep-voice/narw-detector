@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this detector, please cite it as below."
+title: "narw-detector: a North Atlantic right whale upcall detector"
+type: software
+version: 0.1.0
+license: AGPL-3.0-only
+repository-code: "https://github.com/deep-voice/narw-detector"
+authors:
+  - given-names: Naama
+    family-names: Marom-Yochai
+    affiliation: Deep Voice Foundation
+  - given-names: Michael
+    family-names: Faran
+    affiliation: Deep Voice Foundation
+  - given-names: Michael
+    family-names: Michelachvili
+    affiliation: Deep Voice Foundation
+  - given-names: Doron
+    family-names: Shachar
+    affiliation: Deep Voice Foundation
+keywords:
+  - bioacoustics
+  - passive acoustic monitoring
+  - North Atlantic right whale
+  - sound event detection
+preferred-citation:
+  type: conference-paper
+  title: "80,000 Upcalls Under the Sea: Teaching AI to Hear North Atlantic Right Whales"
+  authors:
+    - given-names: Naama
+      family-names: Marom-Yochai
+      affiliation: Deep Voice Foundation
+    - given-names: Michael
+      family-names: Faran
+      affiliation: Deep Voice Foundation
+    - given-names: Michael
+      family-names: Michelachvili
+      affiliation: Deep Voice Foundation
+    - given-names: Doron
+      family-names: Shachar
+      affiliation: Deep Voice Foundation
+  conference:
+    name: "North Atlantic Right Whale Consortium Annual Meeting"
+  year: 2026
